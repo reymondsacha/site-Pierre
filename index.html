@@ -1,0 +1,753 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pierre Vaslin | Plombier à Niort - Dépannage & Installation</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --primary-color: #0d47a1; /* Bleu profond professionnel */
+            --secondary-color: #ff6f00; /* Orange pour l'action et le contraste */
+            --text-dark: #212121;
+            --text-light: #757575;
+            --bg-light: #f5f7fa;
+            --white: #ffffff;
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Open Sans', sans-serif;
+            color: var(--text-dark);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, .logo {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+        }
+
+        /* --- NAVIGATION --- */
+        nav {
+            background-color: var(--white);
+            height: 80px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 5%;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            color: var(--primary-color);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .logo span {
+            color: var(--secondary-color);
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            align-items: center;
+        }
+
+        .nav-links li {
+            margin-left: 30px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-dark);
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: var(--transition);
+        }
+
+        .nav-links a:hover {
+            color: var(--secondary-color);
+        }
+
+        .btn-nav-call {
+            background-color: var(--primary-color);
+            color: var(--white) !important;
+            padding: 10px 20px;
+            border-radius: 5px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .btn-nav-call:hover {
+            background-color: #0a3a82;
+            transform: scale(1.05);
+        }
+
+        /* --- HERO SECTION --- */
+        .hero {
+            height: 85vh;
+            background: linear-gradient(rgba(13, 71, 161, 0.85), rgba(0, 0, 0, 0.5)), 
+                        url('https://images.unsplash.com/photo-1581244277943-fe4a9c777189?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: var(--white);
+            padding: 0 20px;
+        }
+
+        .hero h1 {
+            font-size: clamp(2rem, 5vw, 4rem);
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: -1px;
+        }
+
+        .hero p {
+            font-size: clamp(1.1rem, 2vw, 1.4rem);
+            max-width: 800px;
+            margin-bottom: 35px;
+            font-weight: 300;
+        }
+
+        .cta-container {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .btn {
+            padding: 16px 35px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 700;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            transition: var(--transition);
+        }
+
+        .btn-primary {
+            background-color: var(--secondary-color);
+            color: var(--white);
+            box-shadow: 0 4px 15px rgba(255, 111, 0, 0.3);
+        }
+
+        .btn-primary:hover {
+            background-color: #e65100;
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(255, 111, 0, 0.4);
+        }
+
+        .btn-outline {
+            border: 2px solid var(--white);
+            color: var(--white);
+        }
+
+        .btn-outline:hover {
+            background-color: var(--white);
+            color: var(--primary-color);
+        }
+
+        /* --- FEATURES / TOP BAR --- */
+        .top-features {
+            display: flex;
+            background-color: var(--primary-color);
+            color: var(--white);
+            padding: 20px 5%;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .feature-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-weight: 600;
+        }
+
+        .feature-item i {
+            color: var(--secondary-color);
+            font-size: 1.2rem;
+        }
+
+        /* --- SERVICES SECTION --- */
+        .services {
+            padding: 100px 5% 60px;
+            background-color: var(--bg-light);
+            text-align: center;
+        }
+
+        .section-header {
+            margin-bottom: 60px;
+        }
+
+        .section-header h2 {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+        }
+
+        .underline {
+            width: 80px;
+            height: 4px;
+            background-color: var(--secondary-color);
+            margin: 0 auto;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .service-card {
+            background-color: var(--white);
+            padding: 40px 30px;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            transition: var(--transition);
+            border-bottom: 4px solid transparent;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            border-bottom-color: var(--secondary-color);
+        }
+
+        .icon-box {
+            width: 70px;
+            height: 70px;
+            background-color: rgba(13, 71, 161, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 25px;
+            transition: var(--transition);
+        }
+
+        .service-card:hover .icon-box {
+            background-color: var(--primary-color);
+        }
+
+        .icon-box i {
+            font-size: 1.8rem;
+            color: var(--primary-color);
+        }
+
+        .service-card:hover .icon-box i {
+            color: var(--white);
+        }
+
+        .service-card h3 {
+            margin-bottom: 15px;
+            font-size: 1.3rem;
+        }
+
+        .service-card p {
+            color: var(--text-light);
+            font-size: 0.95rem;
+        }
+
+        /* --- TESTIMONIALS SECTION --- */
+        .testimonials {
+            padding: 80px 5%;
+            background-color: var(--bg-light);
+            text-align: center;
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .testimonial-card {
+            background-color: var(--white);
+            padding: 40px 30px;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+            text-align: left;
+            position: relative;
+        }
+
+        .testimonial-card i.quote-icon {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            font-size: 2rem;
+            color: rgba(13, 71, 161, 0.1);
+        }
+
+        .stars {
+            color: #fbc02d;
+            margin-bottom: 15px;
+            font-size: 0.9rem;
+        }
+
+        .testimonial-text {
+            font-style: italic;
+            color: var(--text-dark);
+            margin-bottom: 20px;
+            font-size: 0.95rem;
+        }
+
+        .client-info {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .client-avatar {
+            width: 50px;
+            height: 50px;
+            background-color: var(--primary-color);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 1.2rem;
+        }
+
+        .client-details h4 {
+            font-size: 1rem;
+            margin-bottom: 2px;
+        }
+
+        .client-details span {
+            font-size: 0.8rem;
+            color: var(--text-light);
+        }
+
+        /* --- ABOUT / AREA --- */
+        .about-area {
+            display: flex;
+            align-items: center;
+            padding: 80px 5%;
+            gap: 50px;
+            flex-wrap: wrap;
+        }
+
+        .about-text {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .about-text h2 {
+            font-size: 2.2rem;
+            margin-bottom: 20px;
+            color: var(--primary-color);
+        }
+
+        .about-text p {
+            margin-bottom: 20px;
+            color: var(--text-light);
+        }
+
+        .area-list {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+            list-style: none;
+        }
+
+        .area-list li {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-weight: 600;
+        }
+
+        .area-list li i {
+            color: var(--secondary-color);
+        }
+
+        .about-image {
+            flex: 1;
+            min-width: 300px;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 20px 20px 0 var(--primary-color);
+            margin-right: 20px;
+        }
+
+        .about-image img {
+            width: 100%;
+            display: block;
+        }
+
+        /* --- CONTACT SECTION --- */
+        .contact-section {
+            padding: 100px 5%;
+            background-color: var(--primary-color);
+            color: var(--white);
+            text-align: center;
+        }
+
+        .contact-section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 40px;
+        }
+
+        .contact-cards {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+
+        .contact-card {
+            background-color: rgba(255,255,255,0.1);
+            padding: 30px;
+            border-radius: 10px;
+            width: 300px;
+            transition: var(--transition);
+            text-decoration: none; /* Important car c'est un lien maintenant */
+            display: block; /* Prend toute la place */
+            cursor: pointer;
+        }
+
+        .contact-card:hover {
+            background-color: rgba(255,255,255,0.2);
+            transform: translateY(-5px);
+        }
+
+        .contact-card i {
+            font-size: 2rem;
+            color: var(--secondary-color);
+            margin-bottom: 15px;
+        }
+
+        .contact-card h4 {
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            color: var(--white);
+        }
+
+        .contact-card p, .contact-card .contact-val {
+            color: var(--white);
+            text-decoration: none;
+            font-size: 1.1rem;
+            display: block;
+        }
+
+        /* --- FOOTER --- */
+        footer {
+            background-color: #1a1a1a;
+            color: #888;
+            padding: 50px 5% 20px;
+            text-align: center;
+        }
+
+        .footer-logo {
+            color: var(--white);
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            display: block;
+        }
+
+        .footer-logo span {
+            color: var(--secondary-color);
+        }
+
+        .social-links {
+            margin-bottom: 30px;
+        }
+
+        .social-links a {
+            color: #888;
+            font-size: 1.5rem;
+            margin: 0 10px;
+            transition: var(--transition);
+        }
+
+        .social-links a:hover {
+            color: var(--white);
+        }
+
+        .copyright {
+            border-top: 1px solid #333;
+            padding-top: 20px;
+            font-size: 0.85rem;
+        }
+
+        /* --- MOBILE CTA BAR --- */
+        .mobile-floating-cta {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 9999;
+            display: none;
+        }
+
+        .fab-call {
+            width: 65px;
+            height: 65px;
+            background-color: var(--secondary-color);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            font-size: 1.5rem;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+            text-decoration: none;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(255, 111, 0, 0.7); }
+            70% { transform: scale(1.1); box-shadow: 0 0 0 15px rgba(255, 111, 0, 0); }
+            100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(255, 111, 0, 0); }
+        }
+
+        /* --- RESPONSIVE --- */
+        @media (max-width: 992px) {
+            .nav-links li:not(:last-child) {
+                display: none;
+            }
+            .about-image {
+                margin-right: 0;
+                box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            }
+            .mobile-floating-cta {
+                display: block;
+            }
+        }
+
+        @media (max-width: 600px) {
+            nav { padding: 0 20px; }
+            .hero h1 { font-size: 2.2rem; }
+            .hero p { font-size: 1rem; }
+            .cta-container { flex-direction: column; width: 100%; }
+            .btn { width: 100%; text-align: center; }
+            .section-header h2 { font-size: 1.8rem; }
+            .contact-card { width: 100%; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Barre de Navigation -->
+    <nav>
+        <div class="logo">Vaslin <span>Pierre</span></div>
+        <ul class="nav-links">
+            <li><a href="#accueil">Accueil</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#secteur">Secteur</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <li><a href="tel:+33771011837" class="btn-nav-call"><i class="fas fa-phone-alt"></i> 07 71 01 18 37</a></li>
+        </ul>
+    </nav>
+
+    <!-- Section Hero -->
+    <section class="hero" id="accueil">
+        <h1>Plombier de Confiance à Niort</h1>
+        <p>Expert en plomberie sanitaire, débouchage et détection de fuites. Intervention rapide à domicile 7j/7 pour toutes vos urgences.</p>
+        <div class="cta-container">
+            <a href="tel:+33771011837" class="btn btn-primary">Une Urgence ? Appelez-moi</a>
+            <a href="#services" class="btn btn-outline">Voir nos services</a>
+        </div>
+    </section>
+
+    <!-- Barre de caractéristiques -->
+    <div class="top-features">
+        <div class="feature-item"><i class="fas fa-bolt"></i> Intervention Rapide</div>
+        <div class="feature-item"><i class="fas fa-file-invoice-dollar"></i> Devis Gratuit</div>
+        <div class="feature-item"><i class="fas fa-shield-alt"></i> Travail Garanti</div>
+        <div class="feature-item"><i class="fas fa-star"></i> Proximité Niort</div>
+    </div>
+
+    <!-- Section Services -->
+    <section class="services" id="services">
+        <div class="section-header">
+            <h2>Nos Expertises</h2>
+            <div class="underline"></div>
+        </div>
+
+        <div class="services-grid">
+            <div class="service-card">
+                <div class="icon-box"><i class="fas fa-bath"></i></div>
+                <h3>Plomberie Sanitaire</h3>
+                <p>Installation et rénovation complète de salles de bain, pose de WC, robinetterie, et chauffe-eau de toutes marques.</p>
+            </div>
+
+            <div class="service-card">
+                <div class="icon-box"><i class="fas fa-search-location"></i></div>
+                <h3>Détection de Fuites</h3>
+                <p>Recherche de fuites non-destructive. Nous intervenons sur vos canalisations encastrées pour limiter les dégâts.</p>
+            </div>
+
+            <div class="service-card">
+                <div class="icon-box"><i class="fas fa-tools"></i></div>
+                <h3>Débouchage</h3>
+                <p>Débouchage haute pression pour vos canalisations bouchées, éviers, douches et colonnes d'eaux usées.</p>
+            </div>
+
+            <div class="service-card">
+                <div class="icon-box"><i class="fas fa-hot-tub"></i></div>
+                <h3>Chauffage</h3>
+                <p>Entretien et remplacement de vos équipements de chauffage, radiateurs et ballons d'eau chaude.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Avis Clients -->
+    <section class="testimonials">
+        <div class="section-header">
+            <h2>Ce que disent nos clients</h2>
+            <div class="underline"></div>
+        </div>
+        
+        <div class="testimonials-grid">
+            <div class="testimonial-card">
+                <i class="fas fa-quote-right quote-icon"></i>
+                <div class="stars">
+                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                </div>
+                <p class="testimonial-text">"Intervention ultra rapide pour une fuite d'eau un samedi soir à Chauray. Pierre est arrivé en 30 minutes, a trouvé la fuite et a réparé proprement. Un vrai pro que je recommande sans hésiter !"</p>
+                <div class="client-info">
+                    <div class="client-avatar">JM</div>
+                    <div class="client-details">
+                        <h4>Jean-Marc D.</h4>
+                        <span>Client à Chauray</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="testimonial-card">
+                <i class="fas fa-quote-right quote-icon"></i>
+                <div class="stars">
+                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                </div>
+                <p class="testimonial-text">"Nous avons fait appel à M. Vaslin pour la rénovation complète de notre salle de bain. Le résultat est magnifique, les délais ont été respectés et le devis était très correct. Travail très soigné."</p>
+                <div class="client-info">
+                    <div class="client-avatar">SL</div>
+                    <div class="client-details">
+                        <h4>Sophie L.</h4>
+                        <span>Cliente à Niort</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="testimonial-card">
+                <i class="fas fa-quote-right quote-icon"></i>
+                <div class="stars">
+                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                </div>
+                <p class="testimonial-text">"Canalisation totalement bouchée un dimanche. Pierre a été très réactif et a réglé le problème rapidement avec un équipement pro. Très honnête sur les tarifs même le week-end."</p>
+                <div class="client-info">
+                    <div class="client-avatar">TR</div>
+                    <div class="client-details">
+                        <h4>Thomas R.</h4>
+                        <span>Client à Bessines</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section À Propos / Secteur -->
+    <section class="about-area" id="secteur">
+        <div class="about-image">
+            <img src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Plombier en intervention">
+        </div>
+        <div class="about-text">
+            <h2>Intervention à Niort & Alentours</h2>
+            <p>Basé au cœur de Niort, Pierre Vaslin met son savoir-faire au service des particuliers et des professionnels. Nous privilégions la réactivité et la qualité des finitions pour chaque chantier.</p>
+            <p>Nous nous déplaçons rapidement dans un rayon de 30km autour de Niort, incluant :</p>
+            <ul class="area-list">
+                <li><i class="fas fa-check"></i> Chauray</li>
+                <li><i class="fas fa-check"></i> Aiffres</li>
+                <li><i class="fas fa-check"></i> Bessines</li>
+                <li><i class="fas fa-check"></i> Vouillé</li>
+                <li><i class="fas fa-check"></i> Magné</li>
+                <li><i class="fas fa-check"></i> Échiré</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Section Contact -->
+    <section class="contact-section" id="contact">
+        <div class="section-header">
+            <h2 style="color: white;">Contactez-moi directement</h2>
+            <div class="underline"></div>
+        </div>
+        
+        <div class="contact-cards">
+            <!-- Téléphone - Carte entière cliquable -->
+            <a href="tel:+33771011837" class="contact-card">
+                <i class="fas fa-phone-alt"></i>
+                <h4>Par Téléphone</h4>
+                <span class="contact-val">07 71 01 18 37</span>
+            </a>
+
+            <!-- Email - Carte entière cliquable vers Gmail -->
+            <a href="https://mail.google.com/mail/u/0/?view=cm&to=pierre.vaslin80@gmail.com" target="_blank" class="contact-card">
+                <i class="fas fa-envelope"></i>
+                <h4>Par Email</h4>
+                <span class="contact-val">pierre.vaslin80@gmail.com</span>
+            </a>
+
+            <!-- Adresse - Carte entière cliquable vers Google Maps -->
+            <a href="https://www.google.com/maps/search/?api=1&query=12+rue+Edouard+Branly+79000+Niort" target="_blank" class="contact-card">
+                <i class="fas fa-map-marker-alt"></i>
+                <h4>Atelier</h4>
+                <p>12 rue Edouard Branly<br>79000 Niort</p>
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-logo">Vaslin <span>Pierre</span></div>
+        <div class="social-links">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-google"></i></a>
+        </div>
+        <p>Intervention Urgente - Disponible 7 jours sur 7</p>
+        <div class="copyright">
+            &copy; 2026 Pierre Vaslin Plomberie Niort - Tous droits réservés.
+        </div>
+    </footer>
+
+    <!-- Bouton flottant Mobile -->
+    <div class="mobile-floating-cta">
+        <a href="tel:+33771011837" class="fab-call">
+            <i class="fas fa-phone-alt"></i>
+        </a>
+    </div>
+
+</body>
+</html>
